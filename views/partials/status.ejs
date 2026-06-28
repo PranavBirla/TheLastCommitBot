@@ -1,0 +1,69 @@
+<section
+id="status"
+class="status-section">
+
+    <div class="container">
+
+        <div class="status-card">
+
+            <div class="status-left">
+
+                <h2>TLC V1 Bot</h2>
+            
+                <div class="status-row">
+            
+                    <span>Status</span>
+            
+                    <strong>
+            
+                        <% if(bot.online){ %>
+            
+                            <span class="status-dot online"></span>
+                            Online
+            
+                        <% }else{ %>
+            
+                            <span class="status-dot offline"></span>
+                            Sleeping
+            
+                        <% } %>
+            
+                    </strong>
+            
+                </div>
+            
+                <div class="status-row">
+            
+                    <span>Latency</span>
+            
+                    <strong><%= bot.ping %> ms</strong>
+            
+                </div>
+            
+                <div class="status-row">   
+                    <span>Communities</span>     
+                    <strong><%= bot.guilds %></strong>      
+                </div>         
+                <div class="status-row">       
+                    <span>Members</span>        
+                    <strong><%= bot.members %></strong>           
+                </div>
+            </div>
+
+            <div class="status-right">
+
+                <a
+                href="/"
+                class="primary-btn">
+
+                    Start TLC V1 Bot
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

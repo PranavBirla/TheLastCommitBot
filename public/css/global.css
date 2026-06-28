@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background:
+        url("/assets/grid3.jpg") ,
+        #fafafa;
+    color: #111827;
+}
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+section {
+    padding: 110px 0;
+}
+
+@media (max-width:992px) {
+
+    section {
+        padding: 80px 0;
+    }
+
+    .container {
+        width: min(92%, 700px);
+    }
+
+}
+
+@media (max-width:576px) {
+
+    .container {
+        width: 90%;
+    }
+
+}

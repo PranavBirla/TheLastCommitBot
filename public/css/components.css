@@ -1,0 +1,277 @@
+.status-section {
+    padding-top: 0;
+}
+
+.status-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 42px;
+    border: 1px solid #ececec;
+    border-radius: 22px;
+    background: white;
+}
+
+.status-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.status-left h3 {
+    font-size: 28px;
+}
+
+.status-left p {
+    color: #666;
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.online {
+    background: #22c55e;
+}
+
+.offline {
+    background: #ef4444;
+}
+
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.status-row span {
+    color: #64748b;
+}
+
+/* ===========================
+   Mission
+=========================== */
+
+.mission {
+    padding-top: 40px;
+    padding-bottom: 120px;
+}
+
+.mission-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    color: #ff6a3d;
+    margin-bottom: 24px;
+}
+
+.mission-title {
+    font-size: 58px;
+    line-height: 1.1;
+    font-weight: 800;
+    max-width: 760px;
+    color: #111827;
+}
+
+.mission-description {
+    margin-top: 34px;
+    max-width: 760px;
+    font-size: 20px;
+    line-height: 1.9;
+    color: #64748b;
+}
+
+.mission-values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-top: 90px;
+}
+
+.mission-values h3 {
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.mission-values p {
+    color: #64748b;
+    line-height: 1.8;
+}
+
+
+/* ===========================
+   HOW IT WORKS
+=========================== */
+
+.workflow {
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
+
+.section-label {
+    color: #ff6a3d;
+    letter-spacing: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    max-width: 760px;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 70px;
+}
+
+.workflow-item {
+    padding: 36px;
+    border: 1px solid #ececec;
+    border-radius: 18px;
+    transition: .3s;
+    background: white;
+}
+
+.workflow-item:hover {
+    transform: translateY(-6px);
+    border-color: #d7d7d7;
+}
+
+.workflow-number {
+    font-size: 14px;
+    color: #ff6a3d;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.workflow-item h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.workflow-item p {
+    color: #64748b;
+    line-height: 1.8;
+}
+
+
+/*=====================
+Features
+======================*/
+
+.features {
+    padding: 120px 0;
+}
+
+.feature-list {
+    margin-top: 80px;
+}
+
+.feature {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+    padding: 42px 0;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.feature:first-child {
+    border-top: 1px solid #e9e9e9;
+}
+
+.feature-title {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.feature-content {
+    color: #667085;
+    line-height: 1.9;
+    font-size: 18px;
+    max-width: 700px;
+}
+
+
+/*=========================
+Responsive Components
+=========================*/
+
+@media (max-width:992px) {
+
+    .mission-title,
+    .section-title {
+
+        font-size: 42px;
+
+    }
+
+    .mission-values {
+
+        grid-template-columns: 1fr;
+        gap: 45px;
+
+    }
+
+    .workflow-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .feature {
+
+        grid-template-columns: 1fr;
+        gap: 18px;
+
+    }
+
+    .status-card {
+
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 35px;
+
+    }
+
+}
+
+@media (max-width:576px) {
+
+    .mission-title,
+    .section-title {
+
+        font-size: 34px;
+
+    }
+
+    .mission-description,
+    .feature-content {
+
+        font-size: 16px;
+
+    }
+
+    .workflow-item {
+
+        padding: 28px;
+
+    }
+
+    .feature-title {
+
+        font-size: 22px;
+
+    }
+
+}
