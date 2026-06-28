@@ -1,6 +1,14 @@
 const progressCommand = require("../commands/progress");
 const Progress = require("../models/Progress");
-const { EmbedBuilder } = require("discord.js");
+
+const {
+    EmbedBuilder,
+    ModalBuilder,
+    TextInputBuilder,
+    TextInputStyle,
+    ActionRowBuilder
+} = require("discord.js");
+
 const calculateXP = require("../utils/calculateXP");
 
 const { updateLeaderboard } = require("../services/leaderboard.service");
@@ -11,13 +19,50 @@ module.exports = (client) => {
 
         // Slash Commands
         if (interaction.isChatInputCommand()) {
-
             if (interaction.commandName === "progress") {
-
                 await progressCommand.execute(interaction);
-
             }
+        }
 
+        if (interaction.isButton()) {
+            if (interaction.customId === "submit_progress") {
+                const modal = new ModalBuilder()
+                    .setCustomId("progressModal")
+                    .setTitle("Today's Progress");
+
+                const workInput = new TextInputBuilder()
+                    .setCustomId("workDone")
+                    .setLabel("What did you build today?")
+                    .setStyle(TextInputStyle.Paragraph)
+                    .setRequired(true);
+
+                const hoursInput = new TextInputBuilder()
+                    .setCustomId("hoursWorked")
+                    .setLabel("Hours Worked")
+                    .setStyle(TextInputStyle.Short)
+                    .setRequired(true);
+
+                const githubInput = new TextInputBuilder()
+                    .setCustomId("githubLink")
+                    .setLabel("GitHub Link (Optional)")
+                    .setStyle(TextInputStyle.Short)
+                    .setRequired(false);
+
+                const tomorrowInput = new TextInputBuilder()
+                    .setCustomId("tomorrowGoal")
+                    .setLabel("Tomorrow's Goal")
+                    .setStyle(TextInputStyle.Paragraph)
+                    .setRequired(true);
+
+                modal.addComponents(
+                    new ActionRowBuilder().addComponents(workInput),
+                    new ActionRowBuilder().addComponents(hoursInput),
+                    new ActionRowBuilder().addComponents(githubInput),
+                    new ActionRowBuilder().addComponents(tomorrowInput)
+                );
+
+                await interaction.showModal(modal);
+            }
         }
 
         // Modal Submit

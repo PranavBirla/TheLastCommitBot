@@ -1,6 +1,7 @@
 require("dotenv").config();
 const { Client, GatewayIntentBits } = require("discord.js");
 const connectDB = require("./config/database");
+const { setupPanels } = require("./services/setupPanels.service");
 
 const express = require("express");
 const path = require('path');
@@ -22,8 +23,9 @@ const client = new Client({
     ]
 });
 
-client.once("ready", () => {
+client.once("ready", async () => {
     console.log(`${client.user.tag} is online!`);
+    await setupPanels(client);
 });
 
 require("./events/messageCreate")(client);
